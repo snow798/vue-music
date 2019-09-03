@@ -11,7 +11,7 @@ pipeline {
       steps {
         sh 'echo "hello word!"'
         sh '''
-#!/bin/bash npm install'''
+#!/bin/sh -l npm install'''
       }
     }
     stage('Build') {
@@ -20,5 +20,8 @@ pipeline {
 #!/bin/sh -l node run build'''
       }
     }
+  }
+  environment {
+    docker = '#!/bin/bash'
   }
 }
