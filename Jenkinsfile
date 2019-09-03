@@ -1,7 +1,8 @@
 pipeline {
   agent {
-    dockerfile {
-      filename 'Jenkinsfile'
+    docker {
+      image 'node:6-alpine'
+      args '-p 3000:3000'
     }
 
   }
@@ -17,5 +18,8 @@ pipeline {
         sh 'npm run build'
       }
     }
+  }
+  environment {
+    PATH = '${dockerPath}/bin:${env.PATH}'
   }
 }
