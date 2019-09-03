@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh 'node run build'
+        sh '#!/bin/bash -ilex node run build'
       }
     }
   }
