@@ -11,7 +11,7 @@ pipeline {
       steps {
         sh 'echo "hello word!"'
         sh '''
-#!/bin/sh -l npm install'''
+#!/bin/bash npm install'''
       }
     }
     stage('Build') {
