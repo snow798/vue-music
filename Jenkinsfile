@@ -9,7 +9,8 @@ pipeline {
     stage('master') {
       steps {
         sh 'echo "hello word!"'
-        sh 'npm install'
+        sh '''
+#!/bin/bash -ilex npm install'''
       }
     }
     stage('Build') {
