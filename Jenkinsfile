@@ -1,9 +1,13 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
-        sh 'echo "hell word!"'
+        sh 'echo "hello word!"'
+        sh '''npm install
+echo "npm install end..."'''
+        sh '''npm run build
+echo "build end ..."'''
       }
     }
   }
