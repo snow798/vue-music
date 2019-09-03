@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    dockerfile {
+      filename 'Jenkinsfile'
+    }
+
+  }
   stages {
     stage('master') {
       steps {
