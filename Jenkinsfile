@@ -10,12 +10,13 @@ pipeline {
       steps {
         sh 'echo "hello word!"'
         sh '''
-#!/bin/bash -ilex npm install'''
+#!/bin/sh -l npm install'''
       }
     }
     stage('Build') {
       steps {
-        sh '#!/bin/bash -ilex node run build'
+        sh '''
+#!/bin/sh -l node run build'''
       }
     }
   }
